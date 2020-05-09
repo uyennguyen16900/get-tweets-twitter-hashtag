@@ -1,7 +1,7 @@
-# Instagram Client API
-> This API allows users to enter hashtags and get the most popular photo and video objects that have been tagged with the hashtag.
+# Twitter Client API
+> This API allows users to enter a hashtag and get the most popular tweet objects that have been tagged with the hashtag.
 
-![Image description](https://cdn.woorise.com/wp-content/uploads/2017/10/best-top-popular-instagram-hashtags.png)
+![Image description](https://www.pngitem.com/pimgs/m/128-1283352_twitter-logo-hashtag-twitter-logo-with-hashtag-hd.png)
 
 ## Installation
 Clone the repository
