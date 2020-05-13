@@ -6,19 +6,19 @@
 ## Installation
 Clone the repository
 
-`git clone []`
+`$ git clone []`
 
 Go to the repo folder
 
-`cd []`
+`$ cd []`
 
 Install all modules
 
-`npm install`
+`$ npm install`
 
 Run the server file
 
-`npm start`
+`$ npm start`
 
 
 ### Get a specific hashtag's node ID
@@ -32,3 +32,6 @@ Run the server file
 
 ### Get the most recently published photos and videos that have a specific hashtag
 `/{ig-hashtag-id}/recent_media`
+
+### Twitter API Documentation
+https://developer.twitter.com/en/docs/tweets/search/api-reference/get-search-tweets

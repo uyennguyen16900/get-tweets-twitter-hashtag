@@ -1,5 +1,5 @@
 {
-  "name": "instagram-api",
+  "name": "twitter-hashtag",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -7,24 +7,28 @@
     "doc": "docs"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha",
+    "start": "nodemon"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/uyennguyen16900/instagram-api.git"
+    "url": "git+https://github.com/uyennguyen16900/twitter-hashtag.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/uyennguyen16900/instagram-api/issues"
+    "url": "https://github.com/uyennguyen16900/twitter-hashtag/issues"
   },
-  "homepage": "https://github.com/uyennguyen16900/instagram-api#readme",
+  "homepage": "https://github.com/uyennguyen16900/twitter-hashtag#readme",
   "dependencies": {
     "body-parser": "^1.19.0",
+    "chai": "^4.2.0",
+    "chai-http": "^4.3.0",
     "dotenv": "^8.2.0",
     "ejs": "^3.1.2",
     "express": "^4.17.1",
     "express-handlebars": "^4.0.4",
+    "mocha": "^7.1.2",
     "save": "^2.4.0",
     "twit": "^2.2.11",
     "twitter": "^1.7.1"
