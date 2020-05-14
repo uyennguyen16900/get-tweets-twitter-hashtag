@@ -19,26 +19,26 @@ module.exports = app => {
 
 
       Twitter.get('search/tweets', {
-          q: req.body.hashtag, // use the user posted hashtag value as the query
-          count: 100,
-          result_type: "mixed"
+        q: req.body.hashtag, // use the user posted hashtag value as the query
+        count: 100,
+        result_type: "mixed"
 
       }).catch(function (err) {
-          console.log('caught error', err.stack)
-          res.render('index', {
-              hashtag: null,
-              twitterData: null,
-              error: err.stack
-          });
+        console.log('caught error', err.stack)
+        res.render('index', {
+            hashtag: null,
+            twitterData: null,
+            error: err.stack
+        });
       }).then(function (result) {
-          console.log('data', result.data);
+        console.log('data', result.data);
 
         // Render the index page passing in the hashtag and the Twitter API results
-          res.render('index', {
-              hashtag: req.body.hashtag,
-              twitterData: result.data,
-              error: null
-          });
+        res.render('index', {
+          hashtag: req.body.hashtag,
+          twitterData: result.data,
+          error: null
+        });
       });
     }
   });

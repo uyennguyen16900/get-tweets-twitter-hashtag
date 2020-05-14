@@ -36,12 +36,8 @@ app.use(bodyParser.urlencoded({ extended: true }));
 // });
 
 
-
 // Routes
 require('./controllers/index.js')(app);
-
-
-
 
 // Start Server
 app.listen(`${process.env.PORT}`, () => {

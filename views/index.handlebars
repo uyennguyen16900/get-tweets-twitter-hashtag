@@ -16,21 +16,36 @@
 
 
 {{#if twitterData}}
+  {{#each twitterData.statuses}}
+    <div>
+      <div class="col-sm-4">
+        <div class="card mb-3">
+          <div class="card-body">
+            <h5 class="card-title">@{{this.user.screen_name}}</h5>
+            <h6 class="card-subtitle mb-2 text-muted">{{this.user.name}}</h6>
+            <p class="card-text">{{this.text}}</p>
+            <p class="card-text"><i class="fa fa-retweet" aria-hidden="true"></i>{{this.retweet_count}}<i class="fa fa-heart" style="color:red;" aria-hidden="true"></i>{{this.favorite_count}}</p>
+            <p class="card-text"><small class="text-muted">Created on {{this.created_at}}</small></p>
+          </div>
+        </div>
+      </div>
+    </div>
 
-  <div id="tweets">helloooooooooo</div>
+  {{/each}}
 
-  <script>
-    let twitterData = JSON.stringify(twitterData);
-    let tweetHTML = '<div class="row">';
-    for (let index = 0; index < twitterData.statuses.length; index++) {
-        var createdDateTime = new Date(twitterData.statuses[index].created_at).toUTCString();
 
-        tweetHTML += twitterData.statuses[index].user.screen_name
-    }
-
-    var tweetsContainer = document.getElementById('tweets');
-    tweetsContainer.insertAdjacentHTML('beforeend', tweetHTML);
-
-  </script>
 
 {{/if}}
+
+<!-- tweetHTML += '<div class="col-sm-4"><div class="card mb-3">' +
+            '<div class="card-body">' +
+            '<h5 class="card-title">@' + twitterData.statuses[index].user.screen_name + '</h5>' +
+            '<h6 class="card-subtitle mb-2 text-muted">' + twitterData.statuses[index].user.name + '</h6>' +
+            '<p class="card-text">' + twitterData.statuses[index].text + '<</p>' +
+            '<p class="card-text"><i class="fa fa-retweet" aria-hidden="true"></i> ' + twitterData.statuses[index].retweet_count + ' <i class="fa fa-heart" style="color:red;" aria-hidden="true"></i> ' + twitterData.statuses[index].favorite_count + '</p>' +
+
+          //  '<a class="card-link" href="#">Another link</a>' +
+            '<p class="card-text"><small class="text-muted">Created on '+createdDateTime.toString()+' </small></p>' +
+            '</div>' +
+            '</div>' +
+            '</div>'; -->
