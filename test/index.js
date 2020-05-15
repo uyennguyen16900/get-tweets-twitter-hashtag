@@ -24,37 +24,17 @@ describe('site', function () {
       })
   })
 
-  // it('Should get hashtag from user input', function (done) {
-  //   chai.request(app)
-  //     .post('/hashtag')
-  //     .send({ hashtag: '#corgi' })
-  //     .end(function (err, res) {
-  //       console.log(res.body.hashtag)
-  //       res.should.have.status(200)
-  //     done()
-  //     if (err) {
-  //       console.log(err)
-  //     }
-  //   })
-  // })
-
-  // it('Should get hashtag from user input',
-  //   (done) => {
-  //     chai.request(app)
-  //     .post('/hashtag')
-  //     .send({ hashtag: '#corgi' })
-  //     .end((err, res) => {
-  //       if (err) { done(err) }
-  //       res.hashtag.should.be.equal('corgi')
-  //       // res.status.should.be.equal(200)
-  //       return done()
-  //     })
-
-      // const response = await chai.request(app)
-      //   .post('/hashtag')
-      //   .send({ hashtag: '#corgi' });
-      //
-      // expect(response.body.status).to.equal(200)
-
-//     })
+  it('Should have tweet page', function (done) {
+    // Test that the home page loads
+    chai
+      .request(app)
+      .get('/hashtag')
+      .end(function (err, res) {
+        if (err) {
+          return done(err)
+        }
+        res.status.should.be.equal(200)
+        return done() // Call done if the test completed successfully.
+      })
+  })
 });
