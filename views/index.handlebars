@@ -1,51 +1,44 @@
-<div class="container">
-    <div class="form mb-2 mt-2">
-    <fieldset>
-        <form action="/hashtag" method="post">
-            <div class="input-group">
-            <input class="form-control" name="hashtag" placeholder="eg. #corgi" required type="text">
-            <input type="submit" value="Search">
+<nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+  <div class="container">
+      <div class="form mb-2 mt-2">
+      <fieldset>
+          <form action="/hashtag" method="post">
+              <div class="input-group">
+              <input class="form-control" name="hashtag" placeholder="Enter a hashtag" required type="text">
+              <input type="submit" value="Search" class="btn btn-outline-light">
+              </div>
+          </form>
+      </fieldset>
+  </div>
+</nav>
+
+<main role="main" class="flex-shrink-0">
+  <div class="container">
+    <h1 class="mt-5" style="padding-top:40px">
+      {{#if hashtag}}
+        <h3><i class="fa fa-twitter" style="color:#00acee"></i>All popular tweets for #{{hashtag}}</h3>
+      {{/if}}
+    </h1>
+
+    {{#if twitterData}}
+      <div class="container" style="padding-top:20px">
+        <div class="row row-cols-3">
+
+        {{#each twitterData.statuses}}
+          <div class="col-4">
+            <div class="card mb-3">
+              <div class="card-body">
+                <h5 class="card-title">@{{this.user.screen_name}}</h5>
+                <h6 class="card-subtitle mb-2 text-muted">{{this.user.name}}</h6>
+                <p class="card-text">{{this.text}}</p>
+                <p class="card-text"><i class="fa fa-retweet" aria-hidden="true"></i>{{this.retweet_count}}<i class="fa fa-heart" style="color:red;" aria-hidden="true"></i>{{this.favorite_count}}</p>
+                <p class="card-text"><small class="text-muted">Created on {{this.created_at}}</small></p>
+              </div>
             </div>
-        </form>
-    </fieldset>
-</div>
-
-{{#if hashtag}}
-  <h3>All popular tweets for {{hashtag}}</h3>
-{{/if}}
-
-
-{{#if twitterData}}
-  {{#each twitterData.statuses}}
-    <div>
-      <div class="col-sm-4">
-        <div class="card mb-3">
-          <div class="card-body">
-            <h5 class="card-title">@{{this.user.screen_name}}</h5>
-            <h6 class="card-subtitle mb-2 text-muted">{{this.user.name}}</h6>
-            <p class="card-text">{{this.text}}</p>
-            <p class="card-text"><i class="fa fa-retweet" aria-hidden="true"></i>{{this.retweet_count}}<i class="fa fa-heart" style="color:red;" aria-hidden="true"></i>{{this.favorite_count}}</p>
-            <p class="card-text"><small class="text-muted">Created on {{this.created_at}}</small></p>
           </div>
+        {{/each}}
         </div>
       </div>
-    </div>
-
-  {{/each}}
-
-
-
-{{/if}}
-
-<!-- tweetHTML += '<div class="col-sm-4"><div class="card mb-3">' +
-            '<div class="card-body">' +
-            '<h5 class="card-title">@' + twitterData.statuses[index].user.screen_name + '</h5>' +
-            '<h6 class="card-subtitle mb-2 text-muted">' + twitterData.statuses[index].user.name + '</h6>' +
-            '<p class="card-text">' + twitterData.statuses[index].text + '<</p>' +
-            '<p class="card-text"><i class="fa fa-retweet" aria-hidden="true"></i> ' + twitterData.statuses[index].retweet_count + ' <i class="fa fa-heart" style="color:red;" aria-hidden="true"></i> ' + twitterData.statuses[index].favorite_count + '</p>' +
-
-          //  '<a class="card-link" href="#">Another link</a>' +
-            '<p class="card-text"><small class="text-muted">Created on '+createdDateTime.toString()+' </small></p>' +
-            '</div>' +
-            '</div>' +
-            '</div>'; -->
+    {{/if}}
+  </div>
+</main>
