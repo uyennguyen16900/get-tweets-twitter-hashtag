@@ -6,32 +6,38 @@
 ## Installation
 Clone the repository
 
-`$ git clone []`
+```
+$ git clone []
+```
 
 Go to the repo folder
 
-`$ cd []`
+```
+$ cd twitter-api
+```
 
 Install all modules
 
-`$ npm install`
+```
+$ npm install
+```
 
 Run the server file
 
-`$ npm start`
+```
+$ npm start
+```
+
+Run the [app](https://localhost:3000) 
 
 
-### Get a specific hashtag's node ID
-`/ig_hashtag_search`
+### Get the home page
+`/`
 
-### Get data about a hashtag
-`/{ig-hashtag-id}`
+### Get the most 100 recent Twitter tweets from a hashtag
+`/hashtag`
 
-### Get the most popular photos and videos that have a specific hashtag
-`/{ig-hashtag-id}/top_media`
+![Gif description](../public/twitter-hashtag.gif)
 
-### Get the most recently published photos and videos that have a specific hashtag
-`/{ig-hashtag-id}/recent_media`
 
-### Twitter API Documentation
-https://developer.twitter.com/en/docs/tweets/search/api-reference/get-search-tweets
+Twitter [API](https://developer.twitter.com/en/docs/tweets/search/api-reference/get-search-tweets) Documentation
